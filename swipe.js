@@ -256,7 +256,6 @@ function Swipe(container, options) {
 
     },
     start: function(event) {
-
       var touches = event.touches[0];
 
       // measure start values
@@ -280,7 +279,6 @@ function Swipe(container, options) {
       // attach touchmove and touchend listeners
       element.addEventListener('touchmove', this, false);
       element.addEventListener('touchend', this, false);
-
     },
     move: function(event) {
 
@@ -339,7 +337,6 @@ function Swipe(container, options) {
 
     },
     end: function(event) {
-
       // measure duration
       var duration = +new Date - start.time;
 
@@ -430,9 +427,7 @@ function Swipe(container, options) {
         options.transitionEnd && options.transitionEnd.call(event, index, slides[index]);
 
       }
-
     }
-
   }
 
   // trigger setup
@@ -506,6 +501,9 @@ function Swipe(container, options) {
       
       // return total number of slides
       return length;
+    },
+    stop: function() {
+      stop();
     },
     kill: function() {
 
